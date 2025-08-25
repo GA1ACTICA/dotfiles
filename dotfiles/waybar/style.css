@@ -54,22 +54,24 @@ tooltip {
 #network,
 #battery,
 #pulseaudio,
+#bell,
 #clock {
     color: @foreground;
     margin: 1px 0;
     padding: 0 10px;
 }
-#custom-bell,
+
 
 #custom-power:hover,
 #bluetooth:hover,
 #network:hover,
 #battery:hover,
 #pulseaudio:hover,
+#custom-bell:hover,
 #clock:hover {
     background-color: alpha(@select, 0.6);
 }
-#custom-bell:hover,
+
 
 #bluetooth {
     color: @yellow;
@@ -88,7 +90,6 @@ tooltip {
 }
 
 #clock {
-    margin-right: 10px;
     color: @blue;
 }
 

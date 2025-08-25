@@ -35,7 +35,7 @@
         "format-ethernet": "  Ethernet",
         "format-linked": "  Linked (No IP)",
         "format-disconnected": "  Disconnected",
-        "tooltip-format": "{essid}",
+        "tooltip-format": "{essid}", 
     },
 
     "battery": {
@@ -83,7 +83,7 @@
     },
 
     "custom/bell": {
-        "format": "",
+        "format": "  ",
         "on-click": "swaync-client -t -sw",
         "tooltip":false
     }
