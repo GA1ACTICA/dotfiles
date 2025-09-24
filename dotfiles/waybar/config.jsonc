@@ -1,14 +1,25 @@
 {
-    "modules-left": ["custom/power", "hyprland/workspaces"],
-    // "modules-center": [],
-    "modules-right": ["tray", "bluetooth", "network", "battery", "pulseaudio", "clock", "custom/bell"],
-
-    "custom/power": {
-        "format" : "⭘ ",
+    "modules-left": [
+        "custom/fastfetch",
+        "pulseaudio",
+        "pulseaudio#second",
+        "bluetooth",
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "battery",
+        "clock",
+        "custom/bell"
+    ],
+    "custom/fastfetch": {
+        "format": "󰣇 ",
         "tooltip": false,
-        "on-click": "wlogout -b 5",
+        "on-click": "kitty --hold sh -c 'fastfetch'",
     },
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -16,28 +27,26 @@
         "format": "{name}",
         "cursor": true,
     },
-
     "tray": {
         "icon-size": 20,
         "spacing": 10,
         "cursor": true,
     },
-
     "bluetooth": {
         "format": " 󰂯 ",
         "format-disabled": " 󰂲 ",
         "format-connected": " 󰂱 ",
         "on-click": "blueman-manager",
     },
-
     "network": {
         "format-wifi": " ",
         "format-ethernet": "  Ethernet",
         "format-linked": "  Linked (No IP)",
         "format-disconnected": "  Disconnected",
-        "tooltip-format": "{essid}", 
+        "tooltip-format-disabled": "WIFI Disabled 󰖪",
+        "format-disabled": "",
+        "tooltip-format": "{essid} ({signalStrength}%) ",
     },
-
     "battery": {
         "states": {
             "good": 85,
@@ -49,11 +58,16 @@
         "format-plugged": " {capacity}%",
         "format-charging": " {capacity}%",
         "format-alt": "{icon} {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "],
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
         "tooltip-format": "{time}",
         "cursor": false,
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "  {volume}%",
@@ -62,11 +76,18 @@
         "format-icons": {
             "headphone": " ",
             "headset": " ",
-            "default": [" "],
+            "default": [
+                " "
+            ],
         },
         "on-click": "pavucontrol",
     },
-
+    "pulseaudio#second": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    },
     "clock": {
         "format": "{:%a %d/%m/%Y ~ %H:%M}",
         "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
@@ -79,14 +100,10 @@
                 "today": "<span color='#F9E2AF'><b>{}</b></span>",
             }
         },
-        
     },
-
     "custom/bell": {
         "format": "  ",
         "on-click": "swaync-client -t -sw",
-        "tooltip":false
-    }
+        "tooltip": false
+    },
 }
-
-

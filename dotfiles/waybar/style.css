@@ -29,6 +29,7 @@ tooltip {
     border: none;
     padding: 0 5px;
 }
+
 #workspaces button:hover {
     color: @pink;
     transition: none;
@@ -48,7 +49,7 @@ tooltip {
     padding: 0 8px;
 }
 
-#custom-power,
+#custom-fastfetch,
 #tray,
 #bluetooth,
 #network,
@@ -62,7 +63,7 @@ tooltip {
 }
 
 
-#custom-power:hover,
+#custom-fastfetch:hover,
 #bluetooth:hover,
 #network:hover,
 #battery:hover,
@@ -93,12 +94,12 @@ tooltip {
     color: @blue;
 }
 
-#custom-power {
+#custom-fastfetch {
     margin-left: 10px;
     padding: 0px 10px 0 15px;
 }
 
 #custom-bell {
-    margin-right: 10px;
-    color:#f38ba8;
+    margin-right: 8px;
+    color: #f38ba8;
 }
