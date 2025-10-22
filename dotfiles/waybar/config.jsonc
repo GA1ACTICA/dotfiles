@@ -18,7 +18,7 @@
     "custom/fastfetch": {
         "format": "󰣇 ",
         "tooltip": false,
-        "on-click": "kitty --hold sh -c 'fastfetch'",
+        "on-click": "kitty --hold sh -c 'fastfetch -c /usr/share/fastfetch/presets/examples/26.jsonc'",
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
